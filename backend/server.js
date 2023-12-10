@@ -5,11 +5,12 @@ const Todo = require('./helpers')
 
 const server = express()
 
+server.use(cors())
+
 server.use(express.json())
 
 server.use(express.static(path.join(__dirname, '../dist')))
 
-server.use(cors())
 
 server.get('/api/todos', async (req, res) => {
   const [status, response] = await Todo.getAll()
