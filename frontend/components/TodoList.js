@@ -7,7 +7,8 @@ const  TodoList = (props) => {
       <div>
         <h1>Todos:</h1>
         {props.data.map(item => (
-          <Todo toggleItem={props.toggleItem} key={item.id} item={item} hide={props.hide} />
+
+          <Todo toggleItem={() => props.toggleItem(item.id)} key={item.id} item={item} hide={props.hide} />
         ))}
       </div>
     )
